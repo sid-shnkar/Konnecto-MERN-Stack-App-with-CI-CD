@@ -40,7 +40,7 @@ For the Devops part of this project, I created a CI/CD pipeline on GitLab, which
 * GitLab CI/CD
 * Jenkins
 
-### APIs used
+### List of Features
 
 * Login/Logout an User
 * Register a new User
