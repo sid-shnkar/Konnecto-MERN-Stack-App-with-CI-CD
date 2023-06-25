@@ -82,7 +82,7 @@ Assign the above variables the values that corresponds to your mongoDB database 
 
 ### Commands used
 
-* Inside both the client and server folder, run the following command - 
+Inside both the client and server folder, run the following command - 
 ```sh
 npm run dev
 ```
