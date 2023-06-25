@@ -1,4 +1,4 @@
-# Konnecto-MERN-App-with-CI-CD
+# Konnecto-MERN-Stack-App-with-CI-CD
 
 Frontend deployment link - https://konnecto-app.netlify.app/
 
