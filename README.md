@@ -25,7 +25,7 @@ Gitlab CI/CD Repo - https://gitlab.com/sidshnkar/konnecto-app-postman-newman-ci-
 
 ### Description
 
-Konnecto MERN Stack App is a social media platform where users can connect with each other, by creating new posts, liking and commenting on each other's posts, adding users to friend list, and live chat with any friend of their choice.
+Konnecto MERN Stack App is a social media platform where users can connect with each other, by creating new posts, liking and commenting on each other's posts, adding users to friend list, and live chat with any friend of their choice. The App has automated CI/CD pipeline which involves building, testing and deployment, using GitLab, Postman, Newman and Jenkins.
 
 For the Devops part of this project, I created a CI/CD pipeline on GitLab, which consists of build, tests, and deployment stages. In the testing stage, along with testing of the frontend and backend part of this project, the Postman Collection containing all the APIs in the backend is also tested using Newman reporters such as cli, htmlextra, and junit. The reports of the testing are generated in HTML and XML format, and are also tested for deployment. Also, I have integrated a Jenkins server to automate this testing process.
 
