@@ -1,0 +1,121 @@
+variables:
+  COLLECTION_NAME: Konnecto_App_Testing_APIs_updated.postman_collection
+
+stages:
+    - build
+    - test
+    - deploy
+
+cache:
+      paths:
+        - client/node_modules
+        - server/node_modules
+
+build_frontend:
+  stage: build
+  image:
+    name: node:latest
+  script:
+    - cd client
+    - echo "VITE_BASE_URL=$VITE_BASE_URL" > .env
+    - npm install
+  artifacts:
+    paths:
+      - client/node_modules
+      
+frontend_tests:
+  stage: test
+  image:
+    name: node:16-alpine
+  script:
+   - cd ./client
+   - apk add curl
+   - npm run dev & 
+   - sleep 30
+   - |
+      curl "http://localhost:5173/auth/login" 
+  needs:
+  - build_frontend
+
+build_backend:
+  stage: build
+  image:
+    name: node:latest
+  script:
+    - cd server
+    - echo "MONGO_URL=$MONGO_URL" > .env
+    - echo "PORT=$PORT" >> .env
+    - echo "JWT_SECRET=$JWT_SECRET" >> .env
+    - npm install
+  artifacts:
+    paths:
+      - server/node_modules
+
+backend_tests:
+  stage: test
+  image:
+    name: node:16-alpine
+  script:
+   - cd ./server
+   - apk add curl
+   - node index.js & 
+   - sleep 15
+   - |
+      curl -X POST -H 'Content-type: application/json' --data-raw "{\"email\":\"$TEST_EMAIL\", \"password\":\"$TEST_PASSWORD\"}" "http://localhost:$PORT/auth/login"  | grep -o '"_id":"[^"]*' | awk -F'"' '{print $4}' 
+  needs:
+  - build_backend
+
+postman_newman_tests:
+    stage: test
+    image: 
+        name: postman/newman_alpine33
+        entrypoint: [""]
+    script:
+        - newman --version
+        - npm install -g newman-reporter-htmlextra
+        - newman run $COLLECTION_NAME --reporters cli,htmlextra,junit --reporter-htmlextra-export report.html --reporter-junit-export report.xml
+    artifacts:
+        when: always
+        paths:
+            - report.html
+            - report.xml
+    needs:
+    - backend_tests
+
+newman_artifacts_tests:
+  stage: test
+  image:
+    name: alpine:latest
+  script:
+    - grep "Newman Run Dashboard" report.html
+  needs:
+    - postman_newman_tests
+
+
+deploy_backend:
+  stage: deploy
+  image:
+    name: node:16-alpine
+  script:
+   - apk add curl 
+   - |
+      curl $BACKEND_DEPLOYMENT_URL_TRIGGER
+  needs:
+  - build_backend
+  - backend_tests
+  - postman_newman_tests
+  - newman_artifacts_tests
+
+
+deploy_frontend:
+  stage: deploy
+  image:
+    name: node:16-alpine
+  script:
+   - apk add curl 
+   - |
+      curl -X POST -d {} $FRONTEND_DEPLOYMENT_URL_TRIGGER
+  needs:
+  - build_frontend
+  - frontend_tests
+  - deploy_backend

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Konnecto App Testing APIs" tests="14" time="1.977">
+  <testsuite name="Login user" id="a3c3b01c-f65a-47e6-8494-ebd835481ad2" timestamp="2023-06-22T17:13:55.371Z" tests="4" failures="0" errors="0" time="0.244">
+    <testcase name="Status code is 200" time="0.244" classname="KonnectoAppTestingApIs"/>
+    <testcase name="Response is an object" time="0.244" classname="KonnectoAppTestingApIs"/>
+    <testcase name="Token should be generated" time="0.244" classname="KonnectoAppTestingApIs"/>
+    <testcase name="User details should be fetched  and non-empty" time="0.244" classname="KonnectoAppTestingApIs"/>
+  </testsuite>
+  <testsuite name="Verify Token" id="610e56d8-95f7-4fbd-a2fd-9d5fee9fcf2f" timestamp="2023-06-22T17:13:55.371Z" tests="3" failures="0" errors="0" time="0.044">
+    <testcase name="Status code is 200" time="0.044" classname="KonnectoAppTestingApIs"/>
+    <testcase name="Response is an object" time="0.044" classname="KonnectoAppTestingApIs"/>
+    <testcase name="User document should be fetched and non-empty" time="0.044" classname="KonnectoAppTestingApIs"/>
+  </testsuite>
+  <testsuite name="Get all users posts" id="88c178db-8cdf-42dd-b5c8-506eba83a854" timestamp="2023-06-22T17:13:55.371Z" tests="3" failures="0" errors="0" time="0.093">
+    <testcase name="Status code is 200" time="0.093" classname="KonnectoAppTestingApIs"/>
+    <testcase name="Response is an object" time="0.093" classname="KonnectoAppTestingApIs"/>
+    <testcase name="Posts property must be an array" time="0.093" classname="KonnectoAppTestingApIs"/>
+  </testsuite>
+  <testsuite name="Get current user friends" id="09c271c7-55f1-4f69-9c5e-e1972633e6dd" timestamp="2023-06-22T17:13:55.371Z" tests="2" failures="0" errors="0" time="0.086">
+    <testcase name="Status code is 200" time="0.086" classname="KonnectoAppTestingApIs"/>
+    <testcase name="Response is an array" time="0.086" classname="KonnectoAppTestingApIs"/>
+  </testsuite>
+  <testsuite name="Get User Profile" id="94b55fe1-a8bc-445e-a79f-5dddc15d539b" timestamp="2023-06-22T17:13:55.371Z" tests="3" failures="0" errors="0" time="0.063">
+    <testcase name="Status code is 200" time="0.063" classname="KonnectoAppTestingApIs"/>
+    <testcase name="Response is an object" time="0.063" classname="KonnectoAppTestingApIs"/>
+    <testcase name="Current UserId must be present in response" time="0.063" classname="KonnectoAppTestingApIs"/>
+  </testsuite>
+  <testsuite name="Get Current User Posts" id="d4b6b894-bb72-4585-84d9-e7015e1a9535" timestamp="2023-06-22T17:13:55.371Z" tests="4" failures="0" errors="0" time="0.096">
+    <testcase name="Status code is 200" time="0.096" classname="KonnectoAppTestingApIs"/>
+    <testcase name="Response is an object" time="0.096" classname="KonnectoAppTestingApIs"/>
+    <testcase name="Posts property must be present and must be an array" time="0.096" classname="KonnectoAppTestingApIs"/>
+    <testcase name="UserId in posts must match with currentUserId" time="0.096" classname="KonnectoAppTestingApIs"/>
+  </testsuite>
+  <testsuite name="Add/Remove user to friend list" id="57d0ee09-0fbb-4772-a5bc-a2a8fb60e03d" timestamp="2023-06-22T17:13:55.371Z" tests="3" failures="0" errors="0" time="0.248">
+    <testcase name="Status code is 200" time="0.248" classname="KonnectoAppTestingApIs"/>
+    <testcase name="Response is an array" time="0.248" classname="KonnectoAppTestingApIs"/>
+    <testcase name="Friend is added/removed to/from friend list" time="0.248" classname="KonnectoAppTestingApIs"/>
+  </testsuite>
+  <testsuite name="Like/Unlike a post" id="4e03fc4b-7e22-4323-92fc-830e135354b2" timestamp="2023-06-22T17:13:55.371Z" tests="3" failures="0" errors="0" time="0.111">
+    <testcase name="Status code is 200" time="0.111" classname="KonnectoAppTestingApIs"/>
+    <testcase name="Response is an object" time="0.111" classname="KonnectoAppTestingApIs"/>
+    <testcase name="Post is liked/unliked" time="0.111" classname="KonnectoAppTestingApIs"/>
+  </testsuite>
+  <testsuite name="View Comments on a post" id="7c26c6a8-7eae-4854-8164-0fc14490a43b" timestamp="2023-06-22T17:13:55.371Z" tests="3" failures="0" errors="0" time="0.156">
+    <testcase name="Status code is 200" time="0.156" classname="KonnectoAppTestingApIs"/>
+    <testcase name="Response is an object" time="0.156" classname="KonnectoAppTestingApIs"/>
+    <testcase name="Required properties like comments are present with matching postId" time="0.156" classname="KonnectoAppTestingApIs"/>
+  </testsuite>
+  <testsuite name="Create comment on post" id="74605863-8b0c-4996-bbb8-a7598c11286d" timestamp="2023-06-22T17:13:55.371Z" tests="3" failures="0" errors="0" time="0.151">
+    <testcase name="Status code is 201" time="0.151" classname="KonnectoAppTestingApIs"/>
+    <testcase name="Response is an object" time="0.151" classname="KonnectoAppTestingApIs"/>
+    <testcase name="Comment should be created on matched postId" time="0.151" classname="KonnectoAppTestingApIs"/>
+  </testsuite>
+  <testsuite name="Create new post" id="e73fa69d-c1b1-4789-bca5-3133b4a2089a" timestamp="2023-06-22T17:13:55.371Z" tests="2" failures="0" errors="0" time="0.389">
+    <testcase name="Status code is 201" time="0.389" classname="KonnectoAppTestingApIs"/>
+    <testcase name="Response is an array having atleast one element" time="0.389" classname="KonnectoAppTestingApIs"/>
+  </testsuite>
+  <testsuite name="Get all chats for current user" id="71d9dda3-bfef-4e49-a885-ac2718877b59" timestamp="2023-06-22T17:13:55.371Z" tests="3" failures="0" errors="0" time="0.115">
+    <testcase name="Status code is 200" time="0.115" classname="KonnectoAppTestingApIs"/>
+    <testcase name="Response is an array" time="0.115" classname="KonnectoAppTestingApIs"/>
+    <testcase name="Chats should have matching current UserId" time="0.115" classname="KonnectoAppTestingApIs"/>
+  </testsuite>
+  <testsuite name="Get a Chat Details" id="c8fb5f6f-b2fa-41a1-bfc6-4167fdd0be98" timestamp="2023-06-22T17:13:55.371Z" tests="3" failures="0" errors="0" time="0.135">
+    <testcase name="Status code is 200" time="0.135" classname="KonnectoAppTestingApIs"/>
+    <testcase name="Response is an object" time="0.135" classname="KonnectoAppTestingApIs"/>
+    <testcase name="Chats should have matching chatId" time="0.135" classname="KonnectoAppTestingApIs"/>
+  </testsuite>
+  <testsuite name="Creating a new chat" id="30276c8f-680c-49ae-9633-4a23ff0b5961" timestamp="2023-06-22T17:13:55.371Z" tests="3" failures="0" errors="0" time="0.046">
+    <testcase name="Status code is 200" time="0.046" classname="KonnectoAppTestingApIs"/>
+    <testcase name="Response is an object" time="0.046" classname="KonnectoAppTestingApIs"/>
+    <testcase name="Chat should have matching current UserId" time="0.046" classname="KonnectoAppTestingApIs"/>
+  </testsuite>
+</testsuites>

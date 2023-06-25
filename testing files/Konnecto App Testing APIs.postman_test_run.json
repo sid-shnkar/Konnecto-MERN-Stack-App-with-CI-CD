@@ -1,0 +1,624 @@
+{
+	"id": "cab90e2a-d74d-435c-9d8e-96f95e8fe6c0",
+	"name": "Konnecto App Testing APIs",
+	"timestamp": "2023-06-22T15:58:35.900Z",
+	"collection_id": "21312385-67509129-00f2-4141-90ef-767b257076e6",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 42,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2023-06-22T15:58:31.287Z",
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "a3c3b01c-f65a-47e6-8494-ebd835481ad2",
+			"name": "Login user",
+			"url": "http://localhost:3001/auth/login",
+			"time": 168,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response is an object": true,
+				"Token should be generated": true,
+				"User details should be fetched": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response is an object": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Token should be generated": {
+					"pass": 1,
+					"fail": 0
+				},
+				"User details should be fetched": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				168
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response is an object": true,
+					"Token should be generated": true,
+					"User details should be fetched": true
+				}
+			]
+		},
+		{
+			"id": "610e56d8-95f7-4fbd-a2fd-9d5fee9fcf2f",
+			"name": "Verify Token",
+			"url": "http://localhost:3001/verifyToken",
+			"time": 42,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response is an object": true,
+				"User document should be fetched and non-empty": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response is an object": {
+					"pass": 1,
+					"fail": 0
+				},
+				"User document should be fetched and non-empty": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				42
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response is an object": true,
+					"User document should be fetched and non-empty": true
+				}
+			]
+		},
+		{
+			"id": "88c178db-8cdf-42dd-b5c8-506eba83a854",
+			"name": "Get all users posts",
+			"url": "http://localhost:3001/posts/?page=1&limit=12",
+			"time": 87,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response is an object": true,
+				"Posts property must be an array": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response is an object": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Posts property must be an array": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				87
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response is an object": true,
+					"Posts property must be an array": true
+				}
+			]
+		},
+		{
+			"id": "09c271c7-55f1-4f69-9c5e-e1972633e6dd",
+			"name": "Get current user friends",
+			"url": "http://localhost:3001/users/648f342788ac761db62603f0/friends",
+			"time": 79,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response is an array": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response is an array": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				79
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response is an array": true
+				}
+			]
+		},
+		{
+			"id": "94b55fe1-a8bc-445e-a79f-5dddc15d539b",
+			"name": "Get User Profile",
+			"url": "http://localhost:3001/users/648f342788ac761db62603f0",
+			"time": 43,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response is an object": true,
+				"Current UserId must be present in response": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response is an object": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Current UserId must be present in response": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				43
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response is an object": true,
+					"Current UserId must be present in response": true
+				}
+			]
+		},
+		{
+			"id": "d4b6b894-bb72-4585-84d9-e7015e1a9535",
+			"name": "Get Current User Posts",
+			"url": "http://localhost:3001/posts/648f342788ac761db62603f0/posts?page=1&limit=12",
+			"time": 81,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response is an object": true,
+				"Posts property must be present and must be an array": true,
+				"UserId in posts must match with currentUserId": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response is an object": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Posts property must be present and must be an array": {
+					"pass": 1,
+					"fail": 0
+				},
+				"UserId in posts must match with currentUserId": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				81
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response is an object": true,
+					"Posts property must be present and must be an array": true,
+					"UserId in posts must match with currentUserId": true
+				}
+			]
+		},
+		{
+			"id": "57d0ee09-0fbb-4772-a5bc-a2a8fb60e03d",
+			"name": "Add/Remove user to friend list",
+			"url": "http://localhost:3001/users/648f342788ac761db62603f0/648f32effb12701eff727e32",
+			"time": 206,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response is an array": true,
+				"Friend is added/removed to/from friend list": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response is an array": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Friend is added/removed to/from friend list": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				206
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response is an array": true,
+					"Friend is added/removed to/from friend list": true
+				}
+			]
+		},
+		{
+			"id": "4e03fc4b-7e22-4323-92fc-830e135354b2",
+			"name": "Like/Unlike a post",
+			"url": "http://localhost:3001/posts/648f32f4fb12701eff727f09/like",
+			"time": 83,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response is an object": true,
+				"Post is liked/unliked": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response is an object": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Post is liked/unliked": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				83
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response is an object": true,
+					"Post is liked/unliked": true
+				}
+			]
+		},
+		{
+			"id": "7c26c6a8-7eae-4854-8164-0fc14490a43b",
+			"name": "View Comments on a post",
+			"url": "http://localhost:3001/posts/648f34a088ac761db6260420/comments?page=1&limit=7",
+			"time": 127,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response is an object": true,
+				"Required properties like comments are present with matching postId": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response is an object": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Required properties like comments are present with matching postId": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				127
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response is an object": true,
+					"Required properties like comments are present with matching postId": true
+				}
+			]
+		},
+		{
+			"id": "74605863-8b0c-4996-bbb8-a7598c11286d",
+			"name": "Create comment on post",
+			"url": "http://localhost:3001/posts/648f34a088ac761db6260420/comments?page=1&limit=7",
+			"time": 126,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Status code is 201": true,
+				"Response is an object": true,
+				"Comment should be created on matched postId": true
+			},
+			"testPassFailCounts": {
+				"Status code is 201": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response is an object": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Comment should be created on matched postId": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				126
+			],
+			"allTests": [
+				{
+					"Status code is 201": true,
+					"Response is an object": true,
+					"Comment should be created on matched postId": true
+				}
+			]
+		},
+		{
+			"id": "e73fa69d-c1b1-4789-bca5-3133b4a2089a",
+			"name": "Create new post",
+			"url": "http://localhost:3001/posts",
+			"time": 324,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Status code is 201": true,
+				"Response is an array having atleast one element": true
+			},
+			"testPassFailCounts": {
+				"Status code is 201": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response is an array having atleast one element": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				324
+			],
+			"allTests": [
+				{
+					"Status code is 201": true,
+					"Response is an array having atleast one element": true
+				}
+			]
+		},
+		{
+			"id": "71d9dda3-bfef-4e49-a885-ac2718877b59",
+			"name": "Get all chats for current user",
+			"url": "http://localhost:3001/chat/chats",
+			"time": 95,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response is an array": true,
+				"Chats should have matching current UserId": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response is an array": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Chats should have matching current UserId": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				95
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response is an array": true,
+					"Chats should have matching current UserId": true
+				}
+			]
+		},
+		{
+			"id": "c8fb5f6f-b2fa-41a1-bfc6-4167fdd0be98",
+			"name": "Get a Chat Details",
+			"url": "http://localhost:3001/chat/648f357b88ac761db626046a",
+			"time": 137,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response is an object": true,
+				"Chats should have matching chatId": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response is an object": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Chats should have matching chatId": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				137
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response is an object": true,
+					"Chats should have matching chatId": true
+				}
+			]
+		},
+		{
+			"id": "30276c8f-680c-49ae-9633-4a23ff0b5961",
+			"name": "Creating a new chat",
+			"url": "http://localhost:3001/chat/newChat",
+			"time": 41,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response is an object": true,
+				"Chat should have matching current UserId": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response is an object": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Chat should have matching current UserId": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				41
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response is an object": true,
+					"Chat should have matching current UserId": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 1639,
+	"collection": {
+		"requests": [
+			{
+				"id": "a3c3b01c-f65a-47e6-8494-ebd835481ad2",
+				"method": "POST"
+			},
+			{
+				"id": "610e56d8-95f7-4fbd-a2fd-9d5fee9fcf2f",
+				"method": "GET"
+			},
+			{
+				"id": "88c178db-8cdf-42dd-b5c8-506eba83a854",
+				"method": "GET"
+			},
+			{
+				"id": "09c271c7-55f1-4f69-9c5e-e1972633e6dd",
+				"method": "GET"
+			},
+			{
+				"id": "94b55fe1-a8bc-445e-a79f-5dddc15d539b",
+				"method": "GET"
+			},
+			{
+				"id": "d4b6b894-bb72-4585-84d9-e7015e1a9535",
+				"method": "GET"
+			},
+			{
+				"id": "57d0ee09-0fbb-4772-a5bc-a2a8fb60e03d",
+				"method": "PATCH"
+			},
+			{
+				"id": "4e03fc4b-7e22-4323-92fc-830e135354b2",
+				"method": "PATCH"
+			},
+			{
+				"id": "7c26c6a8-7eae-4854-8164-0fc14490a43b",
+				"method": "GET"
+			},
+			{
+				"id": "74605863-8b0c-4996-bbb8-a7598c11286d",
+				"method": "POST"
+			},
+			{
+				"id": "e73fa69d-c1b1-4789-bca5-3133b4a2089a",
+				"method": "POST"
+			},
+			{
+				"id": "71d9dda3-bfef-4e49-a885-ac2718877b59",
+				"method": "GET"
+			},
+			{
+				"id": "c8fb5f6f-b2fa-41a1-bfc6-4167fdd0be98",
+				"method": "GET"
+			},
+			{
+				"id": "30276c8f-680c-49ae-9633-4a23ff0b5961",
+				"method": "POST"
+			}
+		]
+	}
+}
